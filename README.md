@@ -8,7 +8,7 @@ Developed as a digital logic implementation project celebrating **World Space We
 
 ## 📌 Architecture Overview
 
-Spacecraft downlinks stream continuous raw binary telemetry prone to bit flips caused by cosmic radiation and Single Event Upsets (SEUs). This IP core implements a **4-state Finite State Machine (FSM)** to align serial data, parse CCSDS header fields, and drop corrupted telemetry frames before passing payload data to the flight processor.
+Spacecraft downlinks stream continuous raw binary telemetry prone to bit flips caused by cosmic radiation and Single Event Upsets (SEUs). This code implements a **4-state Finite State Machine (FSM)** to align serial data, parse CCSDS header fields, and drop corrupted telemetry frames before passing payload data to the flight processor.
 
 ```
                     ┌─────────────────────────┐
