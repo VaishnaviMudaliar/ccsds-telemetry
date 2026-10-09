@@ -86,15 +86,57 @@ vvp ccsds_sim
 === STARTING CCSDS FRAME DE-SERIALIZER SIMULATION ===
 
 [TEST 1] Sending Noise + Valid Telemetry Frame...
-[RTL DEBUG] >>> SYNC DETECTED!
-[RTL DEBUG] Received Full CRC = 0x5856 | Calculated CRC = 0x5856
-[RTL DEBUG] *** CRC MATCH! ***
+[RTL DEBUG @ 0] >>> SYNC DETECTED!
+[RTL DEBUG @ 0] HEADER Byte[0]=0x08 | CRC=0x60f8
+[RTL DEBUG @ 0] HEADER Byte[1]=0x00 | CRC=0x94a6
+[RTL DEBUG @ 0] HEADER Byte[2]=0x00 | CRC=0x653d
+[RTL DEBUG @ 0] HEADER Byte[3]=0x07 | CRC=0x71e4
+[RTL DEBUG @ 0] PAYLOAD Byte[0]=0x01 | CRC=0x9a97
+   [Payload Data Received]: 0x01
+[RTL DEBUG @ 0] PAYLOAD Byte[1]=0x02 | CRC=0x95b1
+   [Payload Data Received]: 0x02
+[RTL DEBUG @ 0] PAYLOAD Byte[2]=0x03 | CRC=0x527f
+   [Payload Data Received]: 0x03
+[RTL DEBUG @ 0] PAYLOAD Byte[3]=0x04 | CRC=0x4533
+   [Payload Data Received]: 0x04
+[RTL DEBUG @ 0] PAYLOAD Byte[4]=0x05 | CRC=0x7bc4
+   [Payload Data Received]: 0x05
+[RTL DEBUG @ 0] PAYLOAD Byte[5]=0x06 | CRC=0x6b3a
+   [Payload Data Received]: 0x06
+[RTL DEBUG @ 0] PAYLOAD Byte[6]=0x07 | CRC=0x972a
+   [Payload Data Received]: 0x07
+[RTL DEBUG @ 0] PAYLOAD Byte[7]=0x08 | CRC=0x5856
+   [Payload Data Received]: 0x08
+[RTL DEBUG @ 0] Received CRC MSB = 0x58 | Expected CRC = 0x5856
+[RTL DEBUG @ 0] Received Full CRC = 0x5856 | Calculated CRC = 0x5856
+[RTL DEBUG @ 0] *** CRC MATCH! ***
 [PASS] Frame successfully decoded and CRC verified!
 
 [TEST 2] Sending Frame with Corrupted Data Bit (SEU)...
-[RTL DEBUG] >>> SYNC DETECTED!
-[RTL DEBUG] Received Full CRC = 0x5856 | Calculated CRC = 0xc209
-[RTL DEBUG] *** CRC MISMATCH! ***
+[RTL DEBUG @ 0] >>> SYNC DETECTED!
+[RTL DEBUG @ 0] HEADER Byte[0]=0x08 | CRC=0x60f8
+[RTL DEBUG @ 0] HEADER Byte[1]=0x00 | CRC=0x94a6
+[RTL DEBUG @ 0] HEADER Byte[2]=0x00 | CRC=0x653d
+[RTL DEBUG @ 0] HEADER Byte[3]=0x07 | CRC=0x71e4
+[RTL DEBUG @ 0] PAYLOAD Byte[0]=0x01 | CRC=0x9a97
+   [Payload Data Received]: 0x01
+[RTL DEBUG @ 0] PAYLOAD Byte[1]=0x02 | CRC=0x95b1
+   [Payload Data Received]: 0x02
+[RTL DEBUG @ 0] PAYLOAD Byte[2]=0xff | CRC=0x7cec
+   [Payload Data Received]: 0xff
+[RTL DEBUG @ 0] PAYLOAD Byte[3]=0x04 | CRC=0x139f
+   [Payload Data Received]: 0x04
+[RTL DEBUG @ 0] PAYLOAD Byte[4]=0x05 | CRC=0xedf7
+   [Payload Data Received]: 0x05
+[RTL DEBUG @ 0] PAYLOAD Byte[5]=0x06 | CRC=0xbb45
+   [Payload Data Received]: 0x06
+[RTL DEBUG @ 0] PAYLOAD Byte[6]=0x07 | CRC=0x2357
+   [Payload Data Received]: 0x07
+[RTL DEBUG @ 0] PAYLOAD Byte[7]=0x08 | CRC=0xc209
+   [Payload Data Received]: 0x08
+[RTL DEBUG @ 0] Received CRC MSB = 0x58 | Expected CRC = 0xc209
+[RTL DEBUG @ 0] Received Full CRC = 0x5856 | Calculated CRC = 0xc209
+[RTL DEBUG @ 0] *** CRC MISMATCH! ***
 [PASS] CRC Engine correctly identified corrupted frame!
 
 === SIMULATION COMPLETE ===
